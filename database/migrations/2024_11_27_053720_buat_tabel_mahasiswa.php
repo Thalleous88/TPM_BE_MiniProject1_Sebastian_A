@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('no_hp');
             $table->string('jenis_kelamin');
             $table->string('hobi');
+            $table->string('foto')->nullable();
             $table->timestamps();
 
         });

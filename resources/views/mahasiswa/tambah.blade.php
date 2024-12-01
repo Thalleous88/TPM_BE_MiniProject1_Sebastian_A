@@ -4,12 +4,14 @@
 
 <h4>Tambah Mahasiswa</h4>
 
-<form action="{{ route('mahasiswa.submit') }}" method="post">
+<form action="{{ route('mahasiswa.submit') }}" method="post" enctype="multipart/form-data">
     @csrf
     <label>NIM</label>
     <input type="number" name="nim" class="form-control mb-2">
     <label>Nama</label>
     <input type="text" name="nama" class="form-control mb-2">
+    <label>Foto</label>
+    <input type="file" name="foto" class="form-control mb-2">
     <label>Alamat</label>
     <input type="text" name="alamat" class="form-control mb-2">
     <label>No HP</label>
