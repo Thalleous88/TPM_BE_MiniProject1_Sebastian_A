@@ -8,5 +8,13 @@
 </head>
 <body>
     <h1 class="text center mt-3" style="text-align:center;">Aplikasi Project TPM BE</h1>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <a href="/mahasiswa" class="btn btn-primary mx-auto" role="button" style="text-align:center;">Start</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
