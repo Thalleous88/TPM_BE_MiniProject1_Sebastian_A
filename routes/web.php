@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\AuthenticationController;
+use App\Http\Middleware\IsLogin;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -13,3 +15,12 @@ Route::post('/mahasiswa/submit', [MahasiswaController::class, 'submit'])->name('
 Route::get('/mahasiswa/edit/{id}', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
 Route::post('/mahasiswa/update/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
 Route::post('/mahasiswa/delete/{id}', [MahasiswaController::class, 'delete'])->name('mahasiswa.delete');
+
+
+Route::controller(AuthenticationController::class)->group(function() {
+    Route::get('/register', 'getRegister')->name('getRegister');
+    Route::post('/register', 'register')->name('register');
+    Route::get('/login', 'getLogin')->name('getLogin');
+    Route::post('/login', 'login')->name('login');
+    Route::post('/logout', 'logout')->name('logout');
+});
