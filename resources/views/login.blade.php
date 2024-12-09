@@ -25,6 +25,15 @@
                 @endforeach
             </ul>
         </div>
+
+        <p> You may need to register <br> Click the button below to register </br> </p>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <a href="/register" class="btn btn-primary mx-auto" role="button" style="text-align:center;">Register</a>
+                </div>
+            </div>
+        </div>
     @endif
 
 </body>

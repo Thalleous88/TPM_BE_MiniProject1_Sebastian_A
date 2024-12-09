@@ -29,7 +29,7 @@ class AuthenticationController extends Controller
             'password' => Hash::make($request->password)
         ]);
 
-        return redirect('/');
+        return redirect('/welcome');
     }
 
     function getLogin() {
@@ -51,7 +51,7 @@ class AuthenticationController extends Controller
             $request->session()->regenerate();
             Cookie::queue('email', Auth::user()->email);
             Log::info(Auth::user()->email.' is login.');
-            return redirect('/');
+            return redirect('/welcome');
         }
 
         return back()->withErrors([
@@ -59,11 +59,12 @@ class AuthenticationController extends Controller
         ])->onlyInput('email');
     }
 
-    function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        Cookie::expire('email');
-        return redirect('/');
+
+        return redirect('/login'); 
     }
 }

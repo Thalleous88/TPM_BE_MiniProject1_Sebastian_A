@@ -6,6 +6,10 @@
     <h4>List Mahasiswa</h4>
     <div class="ms-auto">
         <a class="btn btn-success" href="{{ route('mahasiswa.tambah') }}">Tambah Siswa</a>
+        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit">Logout</button>
+        </form>
     </div>
 </div>
 
